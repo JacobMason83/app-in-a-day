@@ -27,7 +27,7 @@ class Product(db.Model):
         
 class ProductSchema(ma.Schema):
         class Meta: 
-            fields = ( 'productName', 'description', 'price', 'image')
+            fields = ('id', 'productName', 'description', 'price', 'image')
             
 product_schema = ProductSchema()
 products_schema = ProductSchema(many=True) 
@@ -46,7 +46,7 @@ class CreditCardInfo(db.Model):
         
 class CreditCardInfoSchema(ma.Schema):
         class Meta: 
-            fields = ('cvc', 'ccinfo', 'cardholderName')
+            fields = ('id','cvc', 'ccinfo', 'cardholderName')
 creditCardInfo_schema = CreditCardInfoSchema()
 creditCardInfo_schema = CreditCardInfoSchema(many=True) 
 #-----------------------------------------------------------------------------------

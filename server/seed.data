@@ -22,8 +22,7 @@
 {
     "id": 3,
     "productName": "Picture3",
-    "description": "Congratulations on making it into print media. Real bright future there. Rick, the only connection between your unquestionable intelligence and the sickness destroying your family is that everyone in your family, you included, use intelligence to justify sickness. You seem to alternate between viewing your own mind as an unstoppable force and as an inescapable curse. And I think it's because the only truly unapproachable concept for you is that it's your mind within your control. 
-    You chose to come here, you chose to talk to belittle my vocation, just as you chose to become a pickle.",
+    "description": "Congratulations on making it into print media. Real bright future there. Rick, the only connection between your unquestionable",
     "price": 20,
      "image": "https://images.unsplash.com/photo-1594311431552-1cde4f4d1891?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80"
 }
@@ -31,8 +30,7 @@
 {
     "id": 4,
     "productName": "Picture4",
-    "description": "Congratulations on making it into print media. Real bright future there. Rick, the only connection between your unquestionable intelligence and the sickness destroying your family is that everyone in your family, you included, use intelligence to justify sickness. You seem to alternate between viewing your own mind as an unstoppable force and as an inescapable curse. And I think it's because the only truly unapproachable concept for you is that it's your mind within your control. 
-    You chose to come here, you chose to talk to belittle my vocation, just as you chose to become a pickle.",
+    "description": "Congratulations on making it into print media. Real bright future there. Rick, the only connection between your unquestionable intelligence"
     "price: 50,
      "image": "https://images.unsplash.com/photo-1594997791693-9e28b4bbad80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
 }
@@ -40,9 +38,8 @@
 {
     "id": 5,
     "productName": "Picture5",
-    "description": "Congratulations on making it into print media. Real bright future there. Rick, the only connection between your unquestionable intelligence and the sickness destroying your family is that everyone in your family, you included, use intelligence to justify sickness. You seem to alternate between viewing your own mind as an unstoppable force and as an inescapable curse. And I think it's because the only truly unapproachable concept for you is that it's your mind within your control. 
-    You chose to come here, you chose to talk to belittle my vocation, just as you chose to become a pickle.",
-    "price: 50,
+    "description": "Congratulations on making it into print media. Real bright future there. Rick, the only connection between your unquestionable intelligence"
+    "price": 50,
      "image": "https://images.unsplash.com/photo-1594997791693-9e28b4bbad80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
 }
 
