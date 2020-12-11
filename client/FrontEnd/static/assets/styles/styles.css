@@ -13,15 +13,6 @@ body {
 }
 
 
-
-.hero-section {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4));
-    margin-top: auto;
-
-   
-}
-
 .menu-wrapper {
     display: flex;
     justify-content: space-between;
@@ -49,7 +40,6 @@ body {
     padding: 10px 10px 10px 10px;
 }
 
-
 .product-container-1 {
     border: 2px solid black;
     margin: 0;
@@ -61,6 +51,19 @@ body {
 
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;  
+}
+
+.product-container-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-container-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center;
 }
 
 .product-bag-icon {
@@ -77,19 +80,6 @@ hr {
     height: 100px;
 }
 
-.product-container-2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.product-container-3 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    align-self: center;
-}
-
 #myBtn{
     display: flex;
     justify-content: center;
@@ -99,7 +89,3 @@ hr {
     height:100%;
 }
 
-.box-content {
-    display: flex;
-    justify-content: center;
-}
