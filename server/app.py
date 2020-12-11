@@ -15,7 +15,7 @@ class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     product = db.Column(db.String(300), unique=False)
     description = db.Column(db.String(400), unique=False)
-    price = db.Column(db.Int(10), unique=False)
+    price = db.Column(db.Integer, unique=False)
     img = db.Column(db.String(500), unique=False)
 
     
@@ -36,6 +36,6 @@ products_schema = ProductSchema(many=True)
 
 
 if __name__=='__main__':
-    app.run(debug=True)  
+    app.run(port=7000, debug=True)  
 
 #Merge with @app.route Jacob
