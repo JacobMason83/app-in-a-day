@@ -2,7 +2,11 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import os
+
+
 app = Flask(__name__)  
+
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.sqlite')
 db = SQLAlchemy(app)
@@ -14,6 +18,7 @@ class Product(db.Model):
     price = db.Column(db.Integer, unique=False)
     image = db.Column(db.String(500), unique=False)
     def __init__(self, productName, description, price, image):
+        
         self.productName = productName
         self.description = description
         self.price = price
@@ -22,7 +27,7 @@ class Product(db.Model):
         
 class ProductSchema(ma.Schema):
         class Meta: 
-            fields = ('id', 'productName', 'description', 'price', 'image')
+            fields = ( 'productName', 'description', 'price', 'image')
             
 product_schema = ProductSchema()
 products_schema = ProductSchema(many=True) 
@@ -41,17 +46,17 @@ class CreditCardInfo(db.Model):
         
 class CreditCardInfoSchema(ma.Schema):
         class Meta: 
-            fields = ('id', 'cvc', 'ccinfo', 'cardholderName')
+            fields = ('cvc', 'ccinfo', 'cardholderName')
 creditCardInfo_schema = CreditCardInfoSchema()
 creditCardInfo_schema = CreditCardInfoSchema(many=True) 
 #-----------------------------------------------------------------------------------
 @app.route('/product', methods=['POST'])
 def add_product():
-    product = request.form['productName']
-    description = request.form['description']
-    price = request.form['price']
-    image = request.form['image']
-    new_product = Product(id, productName, description, price, image)
+    productName = request.json['productName']
+    description = request.json['description']
+    price = request.json['price']
+    image = request.json['image']
+    new_product = Product( productName, description, price, image)
     
     
     db.session.add(new_product)
@@ -81,10 +86,10 @@ def update_product(id):
     # getting the movie queried by id 
     product = Product.query.get(id)
     # requesting the fields from the database to be used for the changes 
-    productName = request.form['productName']
-    description = request.form['description']
-    price = request.form['price']
-    image = request.form['image']
+    productName = request.json['productName']
+    description = request.json['description']
+    price = request.json['price']
+    image = request.json['image']
     
     # changing and updating the products
     product.productName = productName
@@ -109,14 +114,14 @@ def delete_product(id):
 
 
 @app.route('/creditcardinfo', methods=['POST'])
-def add_product():
+def add_ccinfo():
     cvc = request.form['cvc']
     ccinfo = request.form['ccinfo']
     cardhholderName = request.form['cardholderName']
     new_creditCardInfo = CreditCardInfo(id, cvc, ccinfo, cardholderName)
     db.session.add(new_creditCardInfo)
     db.session.commit()
-   creditCardInfo = CreditCardInfo.query.get(new_creditCardInfo.id)
+    creditCardInfo = CreditCardInfo.query.get(new_creditCardInfo.id)
     return creditCardInfo_schema.jsonify(creditCardInfo) 
 
 
