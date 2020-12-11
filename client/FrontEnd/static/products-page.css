@@ -1,0 +1,31 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+}
+.nav-bar {
+    height: 100px;
+    background-color: grey;
+
+}
+.product-body {
+    height: 800px;
+    background-color: #7B8998;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding-right: 70px;
+    padding-left: 70px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.footer {
+    background-color: grey;
+    height: 200px;
+}
+.product-body > .first-column {
+    border: 2px solid #182c42;
+}
+.product-body > .second-column {
+    border: 2px solid #182c42;
+}
