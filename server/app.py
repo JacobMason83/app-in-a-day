@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import os
+
+
 app = Flask(__name__)  
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -17,6 +19,7 @@ class Product(db.Model):
     image = db.Column(db.String(500), unique=False)
 
     def __init__(self, productName, description, price, image):
+        
         self.productName = productName
         self.description = description
         self.price = price
@@ -24,8 +27,8 @@ class Product(db.Model):
 
 class ProductSchema(ma.Schema):
         class Meta: 
-            fields = ('productName', 'description', 'price', 'image')
-
+            fields = ( 'productName', 'description', 'price', 'image')
+            
 product_schema = ProductSchema()
 products_schema = ProductSchema(many=True) 
 
@@ -43,7 +46,6 @@ class CreditCardInfo(db.Model):
 class CreditCardInfoSchema(ma.Schema):
         class Meta: 
             fields = ('cvc', 'ccinfo', 'cardholderName')
-
 creditCardInfo_schema = CreditCardInfoSchema()
 creditCardInfo_schema = CreditCardInfoSchema(many=True) 
 #-----------------------------------------------------------------------------------
@@ -53,9 +55,9 @@ def add_product():
     description = request.json['description']
     price = request.json['price']
     image = request.json['image']
-
     new_product = Product( productName, description, price, image)
-
+    
+    
     db.session.add(new_product)
     db.session.commit()
 
@@ -85,7 +87,7 @@ def update_product(id):
     description = request.json['description']
     price = request.json['price']
     image = request.json['image']
-
+    
     # changing and updating the products
     product.productName = productName
     product.description = description
@@ -106,14 +108,15 @@ def delete_product(id):
 
 @app.route('/creditcardinfo', methods=['POST'])
 def add_ccinfo():
-    cvc = request.json['cvc']
-    ccinfo = request.json['ccinfo']
-    cardhholderName = request.json['cardholderName']
-
+    cvc = request.form['cvc']
+    ccinfo = request.form['ccinfo']
+    cardhholderName = request.form['cardholderName']
     new_creditCardInfo = CreditCardInfo(id, cvc, ccinfo, cardholderName)
 
     db.session.add(new_creditCardInfo)
     db.session.commit()
+    creditCardInfo = CreditCardInfo.query.get(new_creditCardInfo.id)
+    return creditCardInfo_schema.jsonify(creditCardInfo) 
 
     creditCardInfo = CreditCardInfo.query.get(new_creditCardInfo.id)
     return creditCardInfo_schema.jsonify(creditCardInfo) 
