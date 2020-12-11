@@ -1,64 +1,83 @@
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 26px;
-    background-color: #7B8998;
-    secondary-color: #576a7d;
-    title-color: #182c42;
-    min-height: 80vh;
-    /* background: url(/client/FrontEnd/static/assets/images/fish.png) center/cover fixed no-repeat; */
 
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-style: italic;
+    margin: 20px;
+    padding: 20px;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4));
+    overflow: auto;
+    background: url(https://images.unsplash.com/photo-1590393802688-ab3fd7c186f2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNraW5jYXJlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60) center/cover fixed no-repeat;
+    resize: horizontal;
 }
 
-/* .hero-section {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)),
-    url('/client/FrontEnd/static/assets/images/fish.png') center/cover no-repeat fixed;
-    margin-top: auto;
-} */
 
 .menu-wrapper {
     display: flex;
     justify-content: space-between;
-
-
+    margin: 0;
 }
 
 .cart-housing {
-    width: 90%;
+    display: flex;
+    flex-direction: ;
+    /* flex-shrink: inherit; */
+    width: 80%;
+    height: 80%;
     margin: auto;
+    box-sizing: border-box;
 }
 .align-text-center {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 .cart-housing > .cart-column {
     width: 100%;
-    margin: auto;
+    margin: 20px;
     margin-bottom: 16px;
     padding: 10px 10px 10px 10px;
 }
 
 .product-container-1 {
     border: 2px solid black;
-    margin: auto;
+    margin: 0;
     padding: 0px 0px 0px 0px;
 
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
 
 
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
-    
+    grid-template-columns: 3fr 1fr 1fr;  
 }
 
 .product-container-2 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.product-container-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.product-bag-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+    height: 100px;
 }
 
 #myBtn{
@@ -69,15 +88,4 @@ body {
 
     height:100%;
 }
-.box-content {
-    display: flex;
-    justify-content: center;
 
-}
-.cart-content {
-
-}
-
-.ordertype-row {
-
-}
